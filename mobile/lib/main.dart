@@ -11,8 +11,9 @@ import 'user_provider.dart';
 import 'screens/splash_screen.dart';
 import 'dart:async';
 
-void main() {
-  // Uygulama başlatılırken Provider ile global state yönetimi sağlanır.
+void main() async {
+    WidgetsFlutterBinding.ensureInitialized(); // Flutter motoru başlatılır
+  await Firebase.initializeApp();   // Uygulama başlatılırken Provider ile global state yönetimi sağlanır.
   runApp(
     MultiProvider(
       providers: [
